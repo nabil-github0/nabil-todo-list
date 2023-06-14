@@ -13,7 +13,7 @@ ul {
 }
 
 input,button {
-  padding:5em
+  padding:5em;
 }
 
 .inline li::before {
