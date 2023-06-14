@@ -1,0 +1,36 @@
+body {
+  margin: auto 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 1rem;
+}
+
+.inline li::before {
+  content: "•";
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
+
+.inline {
+  display: flex;
+  margin-top: 0.2rem;
+}
+
+li,button {
+  cursor: pointer;
+}
+
+.inline button {
+  margin-left: 0.5rem;
+}
+
+.done {
+  text-decoration: line-through;
+}
