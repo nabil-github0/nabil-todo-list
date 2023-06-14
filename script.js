@@ -25,11 +25,11 @@ function viewData(data) {
   
 	li.appendChild(document.createTextNode(data.charAt(0).toUpperCase() + data.slice(1)));
 	button.appendChild(document.createTextNode("Delete"));
-	div.appendChild(li);
-	div.appendChild(button);
+	div.append(li,button);
 	container.appendChild(div);
 	ul.appendChild(container);
   
+	div.classList.add("oneLine");
 	button.classList.add("delete");
 	container.classList.add("item-container");
 	
