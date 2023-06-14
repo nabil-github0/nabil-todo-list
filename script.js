@@ -21,24 +21,30 @@ function viewData(data) {
 	var li = document.createElement("li");
 	var button = document.createElement("button");
 	var div = document.createElement("div");
+	var container = document.createElement("div");
+  
 	li.appendChild(document.createTextNode(data.charAt(0).toUpperCase() + data.slice(1)));
 	button.appendChild(document.createTextNode("Delete"));
-	div.append(li,button);
-	ul.appendChild(div);
+	div.appendChild(li);
+	div.appendChild(button);
+	container.appendChild(div);
+	ul.appendChild(container);
+  
 	button.classList.add("delete");
-	div.classList.add("inline");
-
-	button.addEventListener("click",function(){
-		var parentDiv = button.parentElement; 
-        var index = Array.from(ul.children).indexOf(parentDiv);
-        parentDiv.remove(); 
-        removeDataFromLocalStorage(index);
-})
-
-	li.addEventListener("click",function() {
-		li.classList.toggle("done");
-	})
-}
+	container.classList.add("item-container");
+	
+	button.addEventListener("click", function () {
+	  var parentDiv = button.parentElement.parentElement;
+	  var index = Array.from(ul.children).indexOf(parentDiv);
+	  parentDiv.remove();
+	  removeDataFromLocalStorage(index);
+	});
+  
+	li.addEventListener("click", function () {
+	  li.classList.toggle("done");
+	});
+  }
+  
 
 function createListElement() {
 	   addDataToLocalStorage();
