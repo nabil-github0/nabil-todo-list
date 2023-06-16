@@ -99,8 +99,8 @@ function applyInitialClasses() {
 	}
   }
 
-dataArray.forEach((element, index) => {
-  viewData(element, index);
+dataArray.forEach((element) => {
+  viewData(element);
 });
 
 applyInitialClasses();
