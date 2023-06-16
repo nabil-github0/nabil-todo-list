@@ -37,10 +37,6 @@ function updateToggleDataToLocalStorage(element,index) {
 		inputToggleArray[index] = "";
 	  }
 	  localStorage.setItem("toggle", JSON.stringify(inputToggleArray));
-  
-	if (inputToggleArray[index] === "done") {
-	  element.classList.add("done");
-	}
 }
 
 function viewData(data) {
@@ -93,10 +89,22 @@ function addListAfterKeypress(event) {
   }
 }
 
+function applyInitialClasses() {
+	var items = ul.getElementsByClassName("item-container");
+	for (var i = 0; i < items.length; i++) {
+	  var item = items[i].getElementsByTagName("li")[0];
+	  if (inputToggleArray[i] === "done") {
+		item.classList.add("done");
+	  }
+	}
+  }
 
 dataArray.forEach((element, index) => {
   viewData(element, index);
 });
+
+applyInitialClasses();
+
 
 button.addEventListener("click", addListAfterClick);
 
