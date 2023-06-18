@@ -41,22 +41,21 @@ function updateToggleDataToLocalStorage(element,index) {
 
 function viewData(data) {
   var li = document.createElement("li");
-  var button = document.createElement("button");
+  var img = document.createElement("img");
   var div = document.createElement("div");
   var container = document.createElement("div");
 
   li.appendChild(document.createTextNode(data.charAt(0).toUpperCase() + data.slice(1)));
-  button.appendChild(document.createTextNode("Delete"));
-  div.append(li, button);
+  div.append(li, img);
   container.appendChild(div);
   ul.appendChild(container);
 
-  button.classList.add("delete");
+  img.setAttribute("src","https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSmrzk5MkXbdZqNqoAD1YMr12TTkypWPuIuTRaxYsqclqHpbac1xRrv3qSq87mztiOZDk&usqp=CAU")
   div.classList.add("oneLine");
   container.classList.add("item-container");
 
-  button.addEventListener("click", function () {
-    var parentDiv = button.parentElement.parentElement;
+  img.addEventListener("click", function () {
+    var parentDiv = img.parentElement.parentElement;
     var index = Array.from(ul.children).indexOf(parentDiv);
     parentDiv.remove();
     removeDataFromLocalStorage(index);
