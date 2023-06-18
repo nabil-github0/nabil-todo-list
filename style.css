@@ -71,13 +71,9 @@ ul {
   margin-right: 10px;
 }
 
-.item-container button {
-  margin-left: 10px;
-  background-color: #f44336;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
+img {
+  height: 20px;
+  width: 20px;
 }
 
 .done {
