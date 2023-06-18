@@ -30,13 +30,19 @@ h1 {
 }
 
 #userinput {
+  font-size: 20px;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
   width: 200px;
 }
 
+#userinput::placeholder{
+  font-size: 18px;
+}
+
 #enter {
+  font-size: 20px;
   padding: 10px 20px;
   margin-left: 10px;
   background-color: #4CAF50;
@@ -59,6 +65,7 @@ ul {
 }
 
 .item-container li {
+  font-size: 20px;
   margin-right: 10px;
   display: flex;
   align-items: center;
@@ -74,6 +81,7 @@ ul {
 img {
   height: 20px;
   width: 20px;
+  margin-left: 5px;
 }
 
 .done {
@@ -89,17 +97,20 @@ img {
 @media only screen and (max-width: 480px) {
   #userinput {
     width: 100%;
+    font-size: 18px;
+  }
+
+  #enter {
+    font-size:18px;
+  }
+
+  #userinput::placeholder{
+    font-size: 16px;
   }
   
   .item-container li {
     margin-right: 5px;
-    font-size: 14px;
-  }
-  
-  .item-container button {
-    margin-left: 5px;
-    padding: 5px 10px;
-    font-size: 14px;
+    font-size: 18px;
   }
 }
 
