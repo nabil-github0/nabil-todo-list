@@ -91,6 +91,8 @@ img {
 
 .oneLine {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 /* Media Query for smaller devices */
