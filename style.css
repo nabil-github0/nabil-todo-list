@@ -65,7 +65,7 @@ ul {
 }
 
 .item-container li {
-  font-size: 20px;
+  font-size: 24px;
   margin-right: 10px;
   display: flex;
   align-items: center;
@@ -94,7 +94,7 @@ img {
 }
 
 /* Media Query for smaller devices */
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 600px) {
   #userinput {
     width: 100%;
     font-size: 14px;
