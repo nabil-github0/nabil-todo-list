@@ -44,18 +44,20 @@ function viewData(data) {
   var img = document.createElement("img");
   var div = document.createElement("div");
   var container = document.createElement("div");
+  var del = document.createElement("button");
 
   li.appendChild(document.createTextNode(data.charAt(0).toUpperCase() + data.slice(1)));
-  div.append(li, img);
+  del.append(img,document.createTextNode("Delete"));
+  div.append(li,del);
   container.appendChild(div);
   ul.appendChild(container);
 
-  img.setAttribute("src","https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSmrzk5MkXbdZqNqoAD1YMr12TTkypWPuIuTRaxYsqclqHpbac1xRrv3qSq87mztiOZDk&usqp=CAU")
+  img.setAttribute("src","data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAABmUlEQVR4nO2Y3UrDMBTH+1S9Vcit4gP4ACp4o+Ld0KvpC3gjAzdhmyCCCLZqpy8w7Jw3yt4jXdsk7ZEWHNJWNNvStHAOHChJP/6/c3LSJAYlJtTZDd0CKAIQ/VGkOISI/kjSqhSxt7kB/uFuoSd9lQbw97cBhIBfTQjw97aqCxB2zuEvS+4pHYD1OwCcQWnGGbBee3kA8XQKZVvseUvMQK9dfga6F+XXgA43ZG4Omg0IW2dKPWg21AGIsat89IixiwAgkwH+dF+cmTgCPrBThzjOR/rtFbhj6c1ANPlI2721lTzYwJ49x58fcv3JM5SYEE0+9QH8/FjW2GVr1pdcZ+0/76QIQDADgEOIYBGbOAsxnEZN/JEB/okzhksJgos5qP9qNPreD6yv1mQ/MBrmhToWiPeiHVmcCucvj8U7srEL3LHz7aOhOgBu34Fq49atOgD/YEc5gC95+Ct9sMVurpSJZ9ddKS1zASQenB6nBQwsXFx1GKbvCk6OpHXMDVAlN3QLoAhA9EeR4hAi+iNJsYhJPd3QLWBRgC+2tpH2E0LJuQAAAABJRU5ErkJggg==")
   div.classList.add("oneLine");
   container.classList.add("item-container");
 
-  img.addEventListener("click", function () {
-    var parentDiv = img.parentElement.parentElement;
+  del.addEventListener("click", function () {
+    var parentDiv = del.parentElement.parentElement;
     var index = Array.from(ul.children).indexOf(parentDiv);
     parentDiv.remove();
     removeDataFromLocalStorage(index);
